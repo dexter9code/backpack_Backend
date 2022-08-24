@@ -1,0 +1,192 @@
+_id
+62fdfb795830fea42564d117
+title
+"Northen Lights"
+slug
+"northen-lights"
+price
+15000
+ratingAverage
+4
+ratingQuantity
+2
+duration
+3
+summary
+"Breaking taking Beatuy from North Unseen Places and Peace Nature"
+description
+"Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut …"
+tourImage
+"tour-1.jpg"
+
+images
+Array
+createdAt
+2022-08-18T08:38:13.482+00:00
+
+guides
+Array
+__v
+0
+
+
+
+
+
+_id
+62fdfc5c5830fea42564d119
+title
+"Peace Shillong"
+slug
+"peace-shillong"
+price
+10000
+ratingAverage
+4
+ratingQuantity
+2
+duration
+4
+summary
+"Escape from City and crowd"
+description
+"Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut …"
+tourImage
+"tour-2.jpg"
+
+images
+Array
+createdAt
+2022-08-18T08:38:13.482+00:00
+
+guides
+Array
+__v
+0
+
+_id
+62fdfd405830fea42564d11b
+title
+"Green Kerala"
+slug
+"green-kerala"
+price
+12000
+ratingAverage
+4
+ratingQuantity
+2
+duration
+5
+summary
+"Immerse into the green nature once again"
+description
+"Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut …"
+tourImage
+"tour-3.jpg"
+
+images
+Array
+createdAt
+2022-08-18T08:38:13.482+00:00
+
+guides
+Array
+__v
+0
+
+
+_id
+62fdfdb15830fea42564d11d
+title
+"Party Goa"
+slug
+"party-goa"
+price
+18000
+ratingAverage
+4
+ratingQuantity
+2
+duration
+3
+summary
+"Chill near the beach and party at night"
+description
+"Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut …"
+tourImage
+"tour-4.jpg"
+
+images
+Array
+createdAt
+2022-08-18T08:38:13.482+00:00
+
+guides
+Array
+__v
+0
+
+
+_id
+62fdfecf5830fea42564d11f
+title
+"Summar Rajasthan"
+slug
+"summar-rajasthan"
+price
+18000
+ratingAverage
+4
+ratingQuantity
+2
+duration
+3
+summary
+"Enjoy hot in day and cold in night desert"
+description
+"Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut …"
+tourImage
+"tour-5.jpg"
+
+images
+Array
+createdAt
+2022-08-18T08:38:13.482+00:00
+
+guides
+Array
+__v
+0
+
+
+_id
+62fdffda5830fea42564d121
+title
+"The Valley of Flowers"
+slug
+"the-valley-of-flowers"
+price
+15000
+ratingAverage
+4
+ratingQuantity
+2
+duration
+3
+summary
+"foothills of the Himalayas,looks like a fairy land of India"
+description
+"Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut …"
+tourImage
+"tour-6.jpg"
+
+images
+Array
+createdAt
+2022-08-18T08:38:13.482+00:00
+
+guides
+Array
+__v
+0
