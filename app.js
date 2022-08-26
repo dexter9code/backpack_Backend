@@ -1,6 +1,7 @@
 const express = require(`express`);
 const app = express();
 const dotenv = require("dotenv");
+const cors = require("cors");
 const globalErrorHandler = require("./controller/errorController");
 
 const tourRouter = require("./routes/tourRoute");
@@ -11,7 +12,7 @@ dotenv.config({ path: `${__dirname}/config.env` });
 
 //---------middlesware
 app.use(express.static(`${__dirname}/public`));
-
+app.use(cors());
 //bodyParser
 app.use(express.json({ limit: `10kb` }));
 
