@@ -1,5 +1,6 @@
 const express = require(`express`);
 const app = express();
+const path = require("path");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const globalErrorHandler = require("./controller/errorController");

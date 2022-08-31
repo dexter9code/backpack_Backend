@@ -6,6 +6,8 @@ const userController = require("../controller/authController");
 router.route(`/singup`).post(userController.singup);
 router.route(`/login`).post(userController.singin);
 
+router.route(`/`).get(currentUserController.getAllUsers);
+
 router
   .route(`/updatePassword`)
   .patch(userController.protect, userController.updatePassword);
