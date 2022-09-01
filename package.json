@@ -1,16 +1,20 @@
 {
   "name": "backpack",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A simple Tour Booking website",
+  "source": "public/js/index.js",
+  "main": "public/js/bundle.js",
+  "module": "public/js/module.js",
   "scripts": {
     "start": " nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "parcel watch "
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "axios": "^0.27.2",
     "bcrypt": "^5.0.1",
     "cookie-parser": "^1.4.6",
