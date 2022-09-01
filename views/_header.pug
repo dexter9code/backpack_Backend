@@ -4,6 +4,12 @@ header.header
         img(src='icons/backpack-logo.png' alt='logo')
     .header__logo 
     nav.nav.nav--user 
-        a(href='#').nav__el Admin
-        a(href='/login').nav__el.nav__el--cta Login
+        if user 
+            a(href='#').nav__el
+                img.nav__user-img(src=`/img/users/${user.photo}` alt=`/img/users/default.jpg`)
+                span=user.name.split(' ')[0]
+            a(href='#').nav__el.nav__el--logout Logout
+
+        else 
+            a(href='/login').nav__el.nav__el--cta Login
 

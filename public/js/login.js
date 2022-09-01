@@ -2,7 +2,6 @@
 
 const login = async function (email, password) {
   try {
-    console.log(email, password);
     const res = await axios({
       method: "POST",
       url: `http://localhost:8080/backpack/api/r1/user/login`,
@@ -11,9 +10,14 @@ const login = async function (email, password) {
         password,
       },
     });
-    console.log(res);
+    if (res.data.status === "Success") {
+      alert(`Logged in Successfully`);
+      window.setTimeout(() => {
+        location.assign(`/overview`);
+      }, 800);
+    }
   } catch (error) {
-    console.log(error.response.data);
+    console.log(error.response.data.message);
   }
 };
 
