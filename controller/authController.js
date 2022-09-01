@@ -38,6 +38,16 @@ exports.singin = async (req, res, next) => {
   }
 };
 
+exports.Logout = catchAsync(async (req, res, next) => {
+  const cookieOptions = {
+    expires: new Date(Date.now() + 10 * 1000),
+    httpOnly: true, // we cannot mainpulate the cookie in the browser in any way
+    secure: false,
+  };
+  res.cookie("jwt", "logoutout", cookieOptions);
+  res.status(200).json({ status: `Success` });
+});
+
 exports.forgotPassword = catchAsync(async (req, res, next) => {
   const { email } = req.body;
   const user = await User.findOne({ email });
@@ -136,23 +146,27 @@ exports.protect = catchAsync(async (req, res, next) => {
   next();
 });
 
-exports.isLogin = catchAsync(async (req, res, next) => {
-  if (req.cookies.jwt) {
-    const decoded = await promisify(jwt.verify)(
-      req.cookies.jwt,
-      process.env.JWT_KEY
-    );
+exports.isLogin = async (req, res, next) => {
+  try {
+    if (req.cookies.jwt) {
+      const decoded = await promisify(jwt.verify)(
+        req.cookies.jwt,
+        process.env.JWT_KEY
+      );
 
-    const currentUser = await User.findById(decoded.id);
-    if (!currentUser) {
+      const currentUser = await User.findById(decoded.id);
+      if (!currentUser) {
+        return next();
+      }
+      res.locals.user = currentUser;
+      //  req.user = currentUser;
       return next();
     }
-    res.locals.user = currentUser;
-    //  req.user = currentUser;
+  } catch (error) {
     return next();
   }
   next();
-});
+};
 
 exports.restrict = (...roles) => {
   return (req, res, next) => {

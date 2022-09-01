@@ -30,16 +30,29 @@ const $70af9284e599e604$export$596d806903d1f59e = async function(email, password
         (0, $3adf927435cf4518$export$de026b00723010c1)("error", error.response?.data.message);
     }
 };
+const $70af9284e599e604$export$cad1a703886b4e3a = async function() {
+    try {
+        const res = await axios({
+            method: "GET",
+            url: `http://localhost:8080/backpack/api/r1/user/logout`
+        });
+        if (res.data.status === "Success") location.reload(true);
+    } catch (error) {
+        (0, $3adf927435cf4518$export$de026b00723010c1)("error", "Error while logging out!");
+    }
+};
 
 
 //Dom Elements
 const $d0f7ce18c37ad6f6$var$loginForm = document.querySelector(".form");
+const $d0f7ce18c37ad6f6$var$logoutBtn = document.getElementById("logoutBTN");
 if ($d0f7ce18c37ad6f6$var$loginForm) $d0f7ce18c37ad6f6$var$loginForm.addEventListener("submit", (e)=>{
     e.preventDefault();
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     (0, $70af9284e599e604$export$596d806903d1f59e)(email, password);
 });
+if ($d0f7ce18c37ad6f6$var$logoutBtn) $d0f7ce18c37ad6f6$var$logoutBtn.addEventListener("click", (0, $70af9284e599e604$export$cad1a703886b4e3a));
 
 
 //# sourceMappingURL=bundle.js.map

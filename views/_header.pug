@@ -8,7 +8,7 @@ header.header
             a(href='#').nav__el
                 img.nav__user-img(src=`/img/users/${user.photo}` alt=`/img/users/default.jpg`)
                 span=user.name.split(' ')[0]
-            a(href='#').nav__el.nav__el--logout Logout
+            a#logoutBTN.nav__el.nav__el--logout Logout
 
         else 
             a(href='/login').nav__el.nav__el--cta Login

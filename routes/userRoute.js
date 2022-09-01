@@ -5,6 +5,7 @@ const userController = require("../controller/authController");
 
 router.route(`/singup`).post(userController.singup);
 router.route(`/login`).post(userController.singin);
+router.route(`/logout`).get(userController.Logout);
 
 router.route(`/`).get(currentUserController.getAllUsers);
 
