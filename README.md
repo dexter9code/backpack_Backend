@@ -1,6 +1,6 @@
 # Backpack Backend
 
-This project is craeted with node js 
+This project is created with node js 
 
 ## Available Scripts
 
