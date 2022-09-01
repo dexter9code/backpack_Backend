@@ -27,6 +27,6 @@ Built upon MVC architecture with number of features,includes forget password, re
 
 You need config the mongodb in order to run and you need postman in order to test features and routes and sending password reset token will not work you have add your own mailTrap account or sendGrid account in order it to work 
 
-No viewEngine is set so you cannot test in the browser 
+View Engine is set but its only for admin to add data
 
 please dont claim this project as your 
