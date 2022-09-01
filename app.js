@@ -17,7 +17,15 @@ app.use(cors());
 //bodyParser
 app.use(express.json({ limit: `10kb` }));
 
+// template engine
+app.set("view engine", "pug");
+app.set("views", path.join(__dirname, "views"));
+
 // router
+app.get(`/base`, (req, res) => {
+  res.status(200).render("base", { title: "Backpack" });
+});
+
 app.use(`/backpack/api/r1/tours`, tourRouter);
 app.use(`/backpack/api/r1/user`, userRouter);
 app.use(`/backpack/api/r1/reviews`, reviewRouter);
