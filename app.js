@@ -3,6 +3,7 @@ const app = express();
 const path = require("path");
 const dotenv = require("dotenv");
 const cors = require("cors");
+const cookieParser = require("cookie-parser");
 const globalErrorHandler = require("./controller/errorController");
 
 const tourRouter = require("./routes/tourRoute");
@@ -17,7 +18,12 @@ app.use(express.static(`${__dirname}/public`));
 app.use(cors());
 //bodyParser
 app.use(express.json({ limit: `10kb` }));
+app.use(cookieParser());
 
+app.use((req, res, next) => {
+  console.log(req.cookies);
+  next();
+});
 // template engine
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
