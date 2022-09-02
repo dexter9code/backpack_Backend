@@ -8,3 +8,7 @@ exports.getBase = (req, res) => {
 exports.getLogin = (req, res) => {
   res.status(200).render("login", { title: `Login as Admin` });
 };
+
+exports.getMe = (req, res) => {
+  res.status(200).render("account", { title: `Profile` });
+};

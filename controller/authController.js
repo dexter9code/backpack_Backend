@@ -143,6 +143,7 @@ exports.protect = catchAsync(async (req, res, next) => {
     );
   }
   req.user = currentUser;
+  res.locals.user = currentUser;
   next();
 });
 
@@ -159,6 +160,7 @@ exports.isLogin = async (req, res, next) => {
         return next();
       }
       res.locals.user = currentUser;
+
       //  req.user = currentUser;
       return next();
     }
