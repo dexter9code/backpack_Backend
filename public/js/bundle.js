@@ -64,12 +64,34 @@ const $724f469c4d3d7721$export$3bf0495508a61ee = async function(name, email) {
         (0, $3adf927435cf4518$export$de026b00723010c1)("error", error.response.data.message);
     }
 };
+const $724f469c4d3d7721$export$e2853351e15b7895 = async function(currentPassword, password, confirmPassword) {
+    try {
+        const res = await axios({
+            method: "PATCH",
+            url: `http://localhost:8080/backpack/api/r1/user/updatePassword`,
+            data: {
+                currentPassword: currentPassword,
+                password: password,
+                confirmPassword: confirmPassword
+            }
+        });
+        if (res.data.status === "Success") {
+            (0, $3adf927435cf4518$export$de026b00723010c1)("success", "Password changed successfully");
+            window.setTimeout(()=>{
+                location.reload(true);
+            }, 1500);
+        }
+    } catch (error) {
+        (0, $3adf927435cf4518$export$de026b00723010c1)("error", error.response.data.message);
+    }
+};
 
 
 //Dom Elements
 const $d0f7ce18c37ad6f6$var$loginForm = document.querySelector(".form--login");
 const $d0f7ce18c37ad6f6$var$logoutBtn = document.getElementById("logoutBTN");
 const $d0f7ce18c37ad6f6$var$form = document.querySelector(".form-user-data");
+const $d0f7ce18c37ad6f6$var$passwordForm = document.querySelector(".form-user-settings");
 if ($d0f7ce18c37ad6f6$var$loginForm) $d0f7ce18c37ad6f6$var$loginForm.addEventListener("submit", (e)=>{
     e.preventDefault();
     const email = document.getElementById("email").value;
@@ -83,6 +105,18 @@ if ($d0f7ce18c37ad6f6$var$form) $d0f7ce18c37ad6f6$var$form.addEventListener("sub
     const email = document.getElementById("email").value;
     (0, $724f469c4d3d7721$export$3bf0495508a61ee)(name, email);
 });
+if ($d0f7ce18c37ad6f6$var$passwordForm) $d0f7ce18c37ad6f6$var$passwordForm.addEventListener("submit", async (e)=>{
+    e.preventDefault();
+    const currentPassword = document.getElementById("password-current").value;
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("password-confirm").value;
+    await (0, $724f469c4d3d7721$export$e2853351e15b7895)(currentPassword, password, confirmPassword);
+    document.getElementById("password-current").value = "";
+    document.getElementById("password").value = "";
+    document.getElementById("password-confirm").value = "";
+}); // "currentPassword":"testuser2",
+ //   "password":"newtestuser2",
+ //   "confirmPassword":"newtestuser2"
 
 
 //# sourceMappingURL=bundle.js.map
