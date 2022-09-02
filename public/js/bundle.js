@@ -43,9 +43,33 @@ const $70af9284e599e604$export$cad1a703886b4e3a = async function() {
 };
 
 
+
+const $724f469c4d3d7721$export$3bf0495508a61ee = async function(name, email) {
+    try {
+        const res = await axios({
+            method: "PATCH",
+            url: `http://localhost:8080/backpack/api/r1/user/updateMe`,
+            data: {
+                email: email,
+                name: name
+            }
+        });
+        if (res.data.status === "Success") {
+            (0, $3adf927435cf4518$export$de026b00723010c1)("success", "update successfully");
+            window.setTimeout(()=>{
+                location.reload(true);
+            }, 1500);
+        }
+    } catch (error) {
+        (0, $3adf927435cf4518$export$de026b00723010c1)("error", error.response.data.message);
+    }
+};
+
+
 //Dom Elements
-const $d0f7ce18c37ad6f6$var$loginForm = document.querySelector(".form");
+const $d0f7ce18c37ad6f6$var$loginForm = document.querySelector(".form--login");
 const $d0f7ce18c37ad6f6$var$logoutBtn = document.getElementById("logoutBTN");
+const $d0f7ce18c37ad6f6$var$form = document.querySelector(".form-user-data");
 if ($d0f7ce18c37ad6f6$var$loginForm) $d0f7ce18c37ad6f6$var$loginForm.addEventListener("submit", (e)=>{
     e.preventDefault();
     const email = document.getElementById("email").value;
@@ -53,6 +77,12 @@ if ($d0f7ce18c37ad6f6$var$loginForm) $d0f7ce18c37ad6f6$var$loginForm.addEventLis
     (0, $70af9284e599e604$export$596d806903d1f59e)(email, password);
 });
 if ($d0f7ce18c37ad6f6$var$logoutBtn) $d0f7ce18c37ad6f6$var$logoutBtn.addEventListener("click", (0, $70af9284e599e604$export$cad1a703886b4e3a));
+if ($d0f7ce18c37ad6f6$var$form) $d0f7ce18c37ad6f6$var$form.addEventListener("submit", (e)=>{
+    e.preventDefault();
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    (0, $724f469c4d3d7721$export$3bf0495508a61ee)(name, email);
+});
 
 
 //# sourceMappingURL=bundle.js.map
