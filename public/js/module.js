@@ -44,22 +44,14 @@ const $e33d9ff231aec008$export$cad1a703886b4e3a = async function() {
 
 
 
-const $bfe971cba9d06cf8$export$3bf0495508a61ee = async function(name, email) {
+const $bfe971cba9d06cf8$export$3bf0495508a61ee = async function(data) {
     try {
         const res = await axios({
             method: "PATCH",
             url: `http://localhost:8080/backpack/api/r1/user/updateMe`,
-            data: {
-                email: email,
-                name: name
-            }
+            data: data
         });
-        if (res.data.status === "Success") {
-            (0, $1eb0cc260df27e1b$export$de026b00723010c1)("success", "update successfully");
-            window.setTimeout(()=>{
-                location.reload(true);
-            }, 1500);
-        }
+        if (res.data.status === "Success") (0, $1eb0cc260df27e1b$export$de026b00723010c1)("success", "update successfully");
     } catch (error) {
         (0, $1eb0cc260df27e1b$export$de026b00723010c1)("error", error.response.data.message);
     }
@@ -101,9 +93,12 @@ if ($1cd085a7ac742057$var$loginForm) $1cd085a7ac742057$var$loginForm.addEventLis
 if ($1cd085a7ac742057$var$logoutBtn) $1cd085a7ac742057$var$logoutBtn.addEventListener("click", (0, $e33d9ff231aec008$export$cad1a703886b4e3a));
 if ($1cd085a7ac742057$var$form) $1cd085a7ac742057$var$form.addEventListener("submit", (e)=>{
     e.preventDefault();
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    (0, $bfe971cba9d06cf8$export$3bf0495508a61ee)(name, email);
+    const form = new FormData();
+    form.append("name", document.getElementById("name").value);
+    form.append("email", document.getElementById("email").value);
+    form.append("photo", document.getElementById("photo").files[0]);
+    console.log(form);
+    (0, $bfe971cba9d06cf8$export$3bf0495508a61ee)(form);
 });
 if ($1cd085a7ac742057$var$passwordForm) $1cd085a7ac742057$var$passwordForm.addEventListener("submit", async (e)=>{
     e.preventDefault();
