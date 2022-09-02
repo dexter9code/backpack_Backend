@@ -1,0 +1,33 @@
+extends base
+
+
+block content 
+    main.main
+        .product-view__content
+            .product-view__form-container
+                h2.product-heading.ma-bt-lg=title
+                form.form.form--product
+                    .form__group
+                        label.product-form__label(for="title") Tour Name
+                        input#title.form__input(type='text',placeholder='name',required)
+                    .form__group
+                        label.product-form__label(for="price") Price
+                        input#price.form__input(type='number',placeholder='₹',required)
+                    .form__group
+                        label.product-form__label(for="duration") Duration
+                        input#duration.form__input(type='number',placeholder='days',required)
+                    .form__group
+                        label.product-form__label(for="guide") Tour Guide Id
+                        input#guide.form__input(type='text',placeholder='_id')
+                    .form__group
+                        input.form__upload(type='file',accept='image/*',id='tourImage',name='tourImage',required)
+                        label(for="tourImage") Choose Tour Cover 
+                    .form__group
+                        label.product-form__label(for="summary") Summary
+                        input#summary.form__input(type='text',placeholder='About',required)
+                    .form__group 
+                        label.product-form__label(for="descriptioin") Description 
+                        textarea#description(name="description",placeholder='description...' cols="69", rows="10" ,required) 
+                    .form__group 
+                        button(type='submit').product-button.btn--green Add
+

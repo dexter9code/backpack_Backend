@@ -6,9 +6,10 @@ const reviewRouter = require(`./reviewRoute`);
 
 router.use(`/:tourId/reviews`, reviewRouter);
 
+router.route(`/`).get(tourController.getAllTours);
+
 router
-  .route(`/`)
-  .get(tourController.getAllTours)
+  .route(`/addTour`)
   .post(
     userController.protect,
     userController.restrict("admin", "guide"),

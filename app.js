@@ -10,6 +10,7 @@ const tourRouter = require("./routes/tourRoute");
 const userRouter = require("./routes/userRoute");
 const reviewRouter = require("./routes/reviewRoute");
 const viewRouter = require("./routes/viewRoute");
+const { urlencoded } = require("express");
 
 dotenv.config({ path: `${__dirname}/config.env` });
 
@@ -19,6 +20,7 @@ app.use(cors());
 //bodyParser
 app.use(express.json({ limit: `10kb` }));
 app.use(cookieParser());
+app.use(urlencoded({ extended: true }));
 
 app.use((req, res, next) => {
   console.log(req.cookies);

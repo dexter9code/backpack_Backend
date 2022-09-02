@@ -79,11 +79,29 @@ const $724f469c4d3d7721$export$e2853351e15b7895 = async function(currentPassword
 };
 
 
+
+const $7680e803239b0084$export$d01539a9f5c419c3 = async function(data) {
+    try {
+        const res = await axios({
+            method: "POST",
+            url: `http://localhost:8080/backpack/api/r1/tours/addTour`,
+            data: data
+        });
+        if (res.data.status === "Success") (0, $3adf927435cf4518$export$de026b00723010c1)("success", "Added to the Database");
+    } catch (error) {
+        console.log(error);
+        console.log(error.message);
+        (0, $3adf927435cf4518$export$de026b00723010c1)("error", error.response?.data.message);
+    }
+};
+
+
 //Dom Elements
 const $d0f7ce18c37ad6f6$var$loginForm = document.querySelector(".form--login");
 const $d0f7ce18c37ad6f6$var$logoutBtn = document.getElementById("logoutBTN");
 const $d0f7ce18c37ad6f6$var$form = document.querySelector(".form-user-data");
 const $d0f7ce18c37ad6f6$var$passwordForm = document.querySelector(".form-user-settings");
+const $d0f7ce18c37ad6f6$var$productForm = document.querySelector(".form--product");
 if ($d0f7ce18c37ad6f6$var$loginForm) $d0f7ce18c37ad6f6$var$loginForm.addEventListener("submit", (e)=>{
     e.preventDefault();
     const email = document.getElementById("email").value;
@@ -99,6 +117,19 @@ if ($d0f7ce18c37ad6f6$var$form) $d0f7ce18c37ad6f6$var$form.addEventListener("sub
     form.append("photo", document.getElementById("photo").files[0]);
     console.log(form);
     (0, $724f469c4d3d7721$export$3bf0495508a61ee)(form);
+});
+if ($d0f7ce18c37ad6f6$var$productForm) $d0f7ce18c37ad6f6$var$productForm.addEventListener("submit", async (e)=>{
+    e.preventDefault();
+    const form = new FormData();
+    form.append("title", document.getElementById("title").value);
+    form.append("price", document.getElementById("price").value);
+    form.append("duration", document.getElementById("duration").value);
+    form.append("guides", document.getElementById("guide").value);
+    form.append("tourImage", document.getElementById("tourImage").files[0]);
+    form.append("summary", document.getElementById("summary").value);
+    form.append("description", document.getElementById("description").value);
+    console.log(form);
+    await (0, $7680e803239b0084$export$d01539a9f5c419c3)(form);
 });
 if ($d0f7ce18c37ad6f6$var$passwordForm) $d0f7ce18c37ad6f6$var$passwordForm.addEventListener("submit", async (e)=>{
     e.preventDefault();

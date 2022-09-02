@@ -110,6 +110,26 @@ body {
   background-color: #eb4d4b;
 }
 
+.product-heading {
+  font-size: 3.25rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#7dd56f),
+    to(#28b487)
+  );
+  background-image: linear-gradient(to right, #ffffff, #ffffff);
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 0.1rem;
+  line-height: 1.3;
+  text-align: center;
+  padding-top: 3rem;
+}
+
 .heading-secondary {
   font-size: 2.25rem;
   text-transform: uppercase;
@@ -183,6 +203,45 @@ body {
   z-index: 10;
 }
 
+.product-button{
+  font-size: 1.6rem;
+  padding: 1.4rem 5rem;
+  border-radius: 10rem;
+  text-transform: uppercase;
+  display: inline-block;
+  text-decoration: none;
+  position: relative;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  font-weight: 400;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  left: 19rem;
+}
+
+.product-button:hover {
+  -webkit-transform: translateY(-3px);
+  transform: translateY(-3px);
+  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.product-button:active {
+  -webkit-transform: translateY(-1px);
+  transform: translateY(-1px);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.product-button:focus {
+  outline: none;
+  background-color: #2e864b;
+}
+
+
 .btn,
 .btn:link,
 .btn:visited {
@@ -198,7 +257,6 @@ body {
   font-weight: 400;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  /*Add later when we use this for the button in form*/
   border: none;
   cursor: pointer;
 }
@@ -795,6 +853,18 @@ body {
   margin: 0 auto;
   padding: 0 8rem;
 }
+.product-view__content {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 0rem 0;
+}
+.product-view__form-container {
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 0 8rem;
+  background: linear-gradient(45deg, rgb(40 180 135 / 85%), #862e6e);
+}
 
 .footer {
   background-color: #f7f7f7;
@@ -1280,6 +1350,13 @@ body {
   font-size: 1.6rem;
   font-weight: 700;
   margin-bottom: 0.75rem;
+}
+.product-form__label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: white;
 }
 
 .form__photo-upload {

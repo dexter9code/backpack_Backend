@@ -5,6 +5,13 @@ const viewController = require("../controller/viewController");
 const authController = require("../controller/authController");
 
 router.route(`/me`).get(authController.protect, viewController.getMe);
+router
+  .route(`/addTour`)
+  .get(
+    authController.protect,
+    authController.restrict("admin", "guide"),
+    viewController.addProduct
+  );
 router.use(authController.isLogin);
 router.route(`/base`).get(viewController.getBase);
 router.route(`/login`).get(viewController.getLogin);

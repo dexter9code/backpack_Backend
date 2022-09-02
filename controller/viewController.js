@@ -12,3 +12,7 @@ exports.getLogin = (req, res) => {
 exports.getMe = (req, res) => {
   res.status(200).render("account", { title: `Profile` });
 };
+
+exports.addProduct = (req, res) => {
+  res.status(200).render("products", { title: `Add Tour` });
+};
