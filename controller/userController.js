@@ -32,7 +32,6 @@ exports.resizeUserImage = catchAsync(async (req, res, next) => {
     .toFormat("jpeg")
     .jpeg({ quality: 90 })
     .toFile(`public/img/users/${req.file.filename}`);
-
   next();
 });
 
@@ -65,12 +64,15 @@ exports.updateMe = catchAsync(async (req, res, next) => {
     );
 
   const filterBody = filterObj(req.body, "name", "email");
-  if (req.file) filterBody.photo = req.file.filename;
+  if (req.file)
+    filterBody.photo = `http://localhost:8080/img/users/${req.file.filename}`;
 
   const updatedUser = await User.findByIdAndUpdate(id, filterBody, {
     new: true,
     runValidators: true,
   });
+
+  console.log(updatedUser);
 
   res.status(200).json({
     status: `Success`,

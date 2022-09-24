@@ -6,7 +6,7 @@ header.header
     nav.nav.nav--user 
         if user 
             a(href='/me').nav__el
-                img.nav__user-img(src=`/img/users/${user.photo}` alt=`/img/users/default.jpg`)
+                img.nav__user-img(src=`${user.photo}` alt=`/img/users/default.jpg`)
                 span=user.name.split(' ')[0]
             a#logoutBTN.nav__el.nav__el--logout Logout
 
